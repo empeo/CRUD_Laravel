@@ -10,6 +10,9 @@
     @endif
     <div class="card border-primary mb-3 mx-auto" style="max-width: 80rem;">
         <div class="card-header bg-primary text-white fs-2 font-weight-bold">Title: {{ $post->title }}</div>
+        <div class="container-fluid text-left ">
+            <a href="{{ route('users.index') }}" class="btn btn-primary">Back To Home</a>
+        </div>
         <div class="card-body">
             @foreach ($post->getAttributes() as $key => $values)
                 @if ($key !== 'title' && $key !== 'updated_at' && $key !== 'user_id')
@@ -23,7 +26,6 @@
                     </p>
                 @endif
             @endforeach
-            <a href="{{ route('posts.index') }}" class="btn btn-primary">Back To Home</a>
         </div>
     </div>
 @endsection
